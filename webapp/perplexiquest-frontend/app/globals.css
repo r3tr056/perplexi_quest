@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Perplexity-inspired dark theme */
+    --background: 180 20% 6%;
+    --foreground: 180 5% 90%;
+    --card: 180 20% 8%;
+    --card-foreground: 180 5% 90%;
+    --popover: 180 20% 8%;
+    --popover-foreground: 180 5% 90%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 180 20% 6%;
+    --secondary: 180 10% 15%;
+    --secondary-foreground: 180 5% 80%;
+    --muted: 180 10% 12%;
+    --muted-foreground: 180 5% 60%;
+    --accent: 180 15% 18%;
+    --accent-foreground: 180 5% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 180 5% 90%;
+    --border: 180 10% 18%;
+    --input: 180 10% 15%;
+    --ring: 180 100% 50%;
+    --radius: 0.5rem;
+
+    /* Sidebar variables */
+    --sidebar-background: 180 20% 6%;
+    --sidebar-foreground: 180 5% 90%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 180 20% 6%;
+    --sidebar-accent: 180 15% 18%;
+    --sidebar-accent-foreground: 180 5% 90%;
+    --sidebar-border: 180 10% 18%;
+    --sidebar-ring: 180 100% 50%;
+  }
+
+  .dark {
+    --background: 180 20% 6%;
+    --foreground: 180 5% 90%;
+    --card: 180 20% 8%;
+    --card-foreground: 180 5% 90%;
+    --popover: 180 20% 8%;
+    --popover-foreground: 180 5% 90%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 180 20% 6%;
+    --secondary: 180 10% 15%;
+    --secondary-foreground: 180 5% 80%;
+    --muted: 180 10% 12%;
+    --muted-foreground: 180 5% 60%;
+    --accent: 180 15% 18%;
+    --accent-foreground: 180 5% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 180 5% 90%;
+    --border: 180 10% 18%;
+    --input: 180 10% 15%;
+    --ring: 180 100% 50%;
+
+    --sidebar-background: 180 20% 6%;
+    --sidebar-foreground: 180 5% 90%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 180 20% 6%;
+    --sidebar-accent: 180 15% 18%;
+    --sidebar-accent-foreground: 180 5% 90%;
+    --sidebar-border: 180 10% 18%;
+    --sidebar-ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    background-color: hsl(180 20% 6%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(180 10% 12%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(180 10% 25%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(180 10% 35%);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Prose styling */
+.prose {
+  max-width: none;
+}
+
+.prose h1 {
+  @apply text-2xl font-semibold text-white mb-4;
+}
+
+.prose h2 {
+  @apply text-xl font-medium text-white mb-3 mt-6;
+}
+
+.prose h3 {
+  @apply text-lg font-medium text-slate-200 mb-2 mt-4;
+}
+
+.prose p {
+  @apply text-slate-300 mb-4 leading-relaxed;
+}
+
+.prose ul {
+  @apply list-disc list-inside text-slate-300 mb-4 space-y-1;
+}
+
+.prose li {
+  @apply text-slate-300;
+}
+
+.prose strong {
+  @apply font-medium text-slate-200;
+}
+
+/* Perplexity-style button */
+.perplexity-button {
+  @apply bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 text-slate-200 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-150;
+}
+
+.perplexity-button:hover {
+  @apply border-slate-600/50;
+}
+
+/* Search input styling */
+.search-input {
+  @apply bg-slate-800/30 border border-slate-700/50 text-slate-200 placeholder:text-slate-500 rounded-lg px-4 py-2 text-sm;
+}
+
+.search-input:focus {
+  @apply border-slate-600/50 ring-1 ring-slate-600/50 outline-none;
+}
